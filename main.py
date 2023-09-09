@@ -1,12 +1,20 @@
+class Human:
+    def __init__(self, name="human"):
+        self.name=name
+
+    def get_name(self):
+        return self.name
+
+
+
 class Car:
-    color = "white"
 
 
-
-    def __init__(self,model,color,year):
+    def __init__(self,model,color,year,):
         self.model = model
         self.color = color
         self.year = year
+        self.passengers = []
     def show_info(self):
        print("model:",self.model)
        print("color:" , self.color)
@@ -21,12 +29,24 @@ class Car:
     def set_year(self, year):
         self.year = year
 
-myCar = Car("audi","red",2022)
-myCar.color = "red"
+    def add_passenger(self,*args):
+        for human in args:
+            self.passengers.append(human)
 
-myCar.show_info()
+    def show_passenger(self):
+        if self.passengers != []:
+            print("Car -", self.model)
+            for passenger in self.passengers:
+                print(passenger.get_name())
+        else:
+            print("No passengers")
 
-myCar2 = Car("lamborghini","yellow", 2021)
-myCar2.color = "yellow"
 
-myCar2.show_info()
+nick = Human("Nick")
+kate = Human("Kate")
+masha = Human("Masha")
+car = Car("audi", "red", 2000)
+
+car.add_passenger(nick, kate, masha)
+car.show_passenger()
+
