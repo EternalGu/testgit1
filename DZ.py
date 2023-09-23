@@ -1,11 +1,10 @@
-#Hello Teacher
+# Hello Teacher
 
 class Animal:
-    def __init__(self,name, classes, type):
+    def __init__(self, name, classes, type):
         self.name = name
         self.classes = classes
         self.type = type
-
 
     def field(self):
         print(0)
@@ -15,26 +14,24 @@ class Animal:
 
 
 class Tiger(Animal):
-    def __init__(self,name,classes, type):
+    def __init__(self, name, classes, type):
         super().__init__(name, classes, type)
-
 
     def field(self):
         print("field number: 1")
 
 
 class Crocodile(Animal):
-    def __init__(self,name,classes, type):
+    def __init__(self, name, classes, type):
         super().__init__(name, classes, type)
-
 
     def field(self):
         print("field number: 2")
 
-class Kangaroo(Animal):
-    def __init__(self,name,classes, type):
-        super().__init__(name, classes, type)
 
+class Kangaroo(Animal):
+    def __init__(self, name, classes, type):
+        super().__init__(name, classes, type)
 
     def field(self):
         print("field number: 3")
@@ -52,30 +49,27 @@ kangaroo1 = Kangaroo("gaby", "predator", "Kangaroo")
 kangaroo1.show_info()
 kangaroo1.field()
 
-
 result = []
-def divider(a, b):
-    if a < b:
-        raise ValueError
-    if b > 100:
-        raise IndexError
-    return(a/b)
-data = {10: 2, 2: 5, "123": 4, 18: 0, []: 15, 8 : 4}
-for key in data:
- res = divider(key, data[key])
- result.append(res)
 
 print(result)
 
-class Animall:
-    def __init__(self, name, vid, age):
-        self.name = name
-        self.vid = vid
-        self.age = age
+
+def divider(a, b):
+    if a < b:
+        raise ValueError("a should be greater than or equal to b")
+    if b > 100:
+        raise ValueError("b should be less than or equal to 100")
+    return a / b
 
 
+data = {10: 2, 2: 5, 123: 4, 18: 0, 8: 4}
 
+for key in data:
+    try:
+        res = divider(key, data[key])
+        result.append(res)
+    except ValueError as e:
+        print(f"Error for key {key}: {e}")
+        result.append(None)
 
-
-
-
+print(result)
