@@ -1,12 +1,7 @@
-
-
-
-
 def typeNumber():
     print("21")
 
 typeNumber()
-
 
 
 def simpleDecorator(function):
