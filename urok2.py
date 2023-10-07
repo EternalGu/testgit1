@@ -21,3 +21,30 @@ def adder(*args, **kwargs):
     return result
 
 print(adder(2,3,4))
+
+
+def countr(func):
+    def wrapper(*args, **kwargs):
+        wrapper.count += 1
+        return func(*args, **kwargs)
+
+    wrapper.count = 0
+    return wrapper
+
+
+def counter(func):
+    def wrapper(*args, **kwargs):
+        wrapper.count += 1
+        return func(*args, **kwargs)
+
+    wrapper.count = 0
+    return wrapper
+
+@counter
+def hello():
+    print("Hello World")
+
+
+hello()
+hello()
+print(hello.count)

@@ -1,13 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 
-responce = requests.get("https://coinmarketcap.com/")
-# print(responce.content)
-coins = ("bitcoin", "xrp")
+responce = requests.get("https://bank.gov.ua/ua/markets/currency-market")
+
 if responce.status_code == 200:
     soup = BeautifulSoup(responce.text, features="html.parser")
-    # print(soup)
-    soup_list = soup.findAll('a', {"href": "/currencies/", coins: "/#markets"})
-    # print(soup_list)
-    result = soup_list[0].find("span")
+    soup_list = soup.findAll('a', {"href":})
+    result = soup_list[0].find("value")
     print(result.text)
+# print(soup_list)    # print(soup) print(responce.content)
