@@ -15,10 +15,6 @@ class Human:
         print("Країна:", self.country)
         print("Домашня адреса:", self.address)
 
-    def update_contact_number(self, new_contact_number):
-        self.contact_number = new_contact_number
-
-
 class City:
     def __init__(self, name, region, country, population, pochtovii_index, phone_code):
         self.name = name
@@ -35,9 +31,6 @@ class City:
         print("Кількість жителів:", self.population)
         print("Поштовий індекс:", self.pochtovii_index)
         print("Телефонний код:", self.phone_code)
-
-    def update_population(self, new_population):
-        self.population = new_population
 
 
 person = Human("Іван Петрович", "01.01.2000", "+380123456789", "Дніпро", "Україна", "Вулиця колопопопопоп")
